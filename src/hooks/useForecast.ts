@@ -34,7 +34,8 @@ const useForecast = () => {
 
   const getForecast = (data: optionType) => {
     fetch(
-      `${BASE_URL}/data/2.5/forecast?lat=${data.lat}&lon=${data.lon}&units=metric&lang=en&appid=b569a460a0832ac66aa8bfc25d2f4d6a`
+      // `${BASE_URL}/data/2.5/forecast?lat=${data.lat}&lon=${data.lon}&units=metric&lang=en&appid=b569a460a0832ac66aa8bfc25d2f4d6a`
+      `https://api.openweathermap.org/data/2.5/forecast?lat=${data.lat}&lon=${data.lon}&units=metric&lang=en&appid=b569a460a0832ac66aa8bfc25d2f4d6a`
     )
       .then((res) => res.json())
       .then((data) => {
