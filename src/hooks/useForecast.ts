@@ -1,7 +1,8 @@
 import { useState, useEffect, ChangeEvent } from 'react';
 import { optionType, forecastType } from './../types/index';
 
-const BASE_URL = 'http://api.openweathermap.org';
+// const BASE_URL = 'http://api.openweathermap.org';
+const apiUrl = 'https://api.openweathermap.org/geo/1.0/direct?q=K&limit=5&lang=en&appid=b569a460a0832ac66aa8bfc25d2f4d6a';
 
 const useForecast = () => {
   const [city, setCity] = useState<optionType | null>(null);
@@ -11,7 +12,8 @@ const useForecast = () => {
 
   const getSearchOptions = async (term: string) => {
     fetch(
-      `${BASE_URL}/geo/1.0/direct?q=${term.trim()}&limit=5&lang=en&appid=b569a460a0832ac66aa8bfc25d2f4d6a`
+      // `${BASE_URL}/geo/1.0/direct?q=${term.trim()}&limit=5&lang=en&appid=b569a460a0832ac66aa8bfc25d2f4d6a`
+      `${apiUrl}`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -32,7 +34,8 @@ const useForecast = () => {
 
   const getForecast = (data: optionType) => {
     fetch(
-      `${BASE_URL}/data/2.5/forecast?lat=${data.lat}&lon=${data.lon}&units=metric&lang=en&appid=b569a460a0832ac66aa8bfc25d2f4d6a`
+      // `${BASE_URL}/data/2.5/forecast?lat=${data.lat}&lon=${data.lon}&units=metric&lang=en&appid=b569a460a0832ac66aa8bfc25d2f4d6a`
+      `${apiUrl}`
     )
       .then((res) => res.json())
       .then((data) => {
