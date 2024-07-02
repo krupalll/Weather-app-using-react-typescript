@@ -1,7 +1,7 @@
 import { useState, useEffect, ChangeEvent } from 'react';
 import { optionType, forecastType } from './../types/index';
 
-// const BASE_URL = 'http://api.openweathermap.org';
+const BASE_URL = 'http://api.openweathermap.org';
 const apiUrl = 'https://api.openweathermap.org/geo/1.0/direct?q=K&limit=5&lang=en&appid=b569a460a0832ac66aa8bfc25d2f4d6a';
 
 const useForecast = () => {
@@ -34,8 +34,7 @@ const useForecast = () => {
 
   const getForecast = (data: optionType) => {
     fetch(
-      // `${BASE_URL}/data/2.5/forecast?lat=${data.lat}&lon=${data.lon}&units=metric&lang=en&appid=b569a460a0832ac66aa8bfc25d2f4d6a`
-      `${apiUrl}`
+      `${BASE_URL}/data/2.5/forecast?lat=${data.lat}&lon=${data.lon}&units=metric&lang=en&appid=b569a460a0832ac66aa8bfc25d2f4d6a`
     )
       .then((res) => res.json())
       .then((data) => {
