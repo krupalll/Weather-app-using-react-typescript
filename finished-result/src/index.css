@@ -11,3 +11,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+@media screen and (max-width: 500px) {
+  .height{
+    height: 100vh;
+  }
+}
